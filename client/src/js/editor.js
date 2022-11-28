@@ -2,14 +2,15 @@
 import { getDb, putDb } from './database';
 import { header } from './header';
 
+
 export default class {
   constructor() {
     const localData = localStorage.getItem('content');
 
-    // check if CodeMirror is loaded
+    //check if CodeMirror is loaded
     if (typeof CodeMirror === 'undefined') {
       throw new Error('CodeMirror is not loaded');
-    }
+    }else{console.log('CodeMirror Started...')};
 
     this.editor = CodeMirror(document.querySelector('#main'), {
       value: '',
